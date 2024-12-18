@@ -1,0 +1,16 @@
+Scene 1:
+Image: /static/images/image_9d9d17dc-7161-46cc-8b5d-9f98b70463ef.webp
+Audio: /static/audio/audio_scene1_120ac3a6-ff08-47dc-b5f6-9699611bd22e.mp3
+--------------------------------------------------
+Scene 2:
+Image: /static/images/image_32e0b92c-57b2-4b48-921f-24cc1acdd63f.webp
+Audio: Audio:
+--------------------------------------------------
+Scene 3:
+Image: /static/images/image_86d96655-724a-462f-96cd-7e3379c29069.webp
+Audio: Audio:
+--------------------------------------------------
+Scene 4:
+Image: /static/images/image_87ec9dc7-baf4-4e0c-9790-79cb3e147fc3.webp
+Audio: Audio:
+--------------------------------------------------
