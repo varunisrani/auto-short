@@ -1,8 +1,9 @@
 fastapi
 uvicorn
-replicate
+openai
 python-dotenv
 pydantic
 requests
 aiofiles
 python-multipart
+fastapi-cors
