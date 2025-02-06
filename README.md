@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# AutoShorts
 
-## Getting Started
+AutoShorts is an AI-powered video creation application that generates short-form videos by combining AI-generated images, voiceovers, and automatic caption overlays. The project consists of two parts:
+- A Next.js frontend
+- A FastAPI backend
 
-First, run the development server:
+## Table of Contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+  - [Frontend Setup](#frontend-setup)
+  - [Backend Setup](#backend-setup)
+- [Configuration](#configuration)
+- [Running the Application](#running-the-application)
+- [Usage](#usage)
+- [Troubleshooting](#troubleshooting)
+- [License](#license)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Prerequisites
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Make sure you have the following installed:
+- Node.js (v12 or above; the latest LTS version is recommended)
+- Python 3.8 or greater
+- FFmpeg (installed and available in your system PATH)
+- Git
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Installation
 
-## Learn More
+### Frontend Setup
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/autoshorts.git
+   cd autoshorts
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Install Next.js dependencies:
+   ```bash
+   npm install
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Backend Setup
 
-## Deploy on Vercel
+1. Create a Python virtual environment:
+   ```bash
+   python -m venv venv
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. Activate the virtual environment:
+   - On macOS/Linux:
+     ```bash
+     source venv/bin/activate
+     ```
+   - On Windows:
+     ```bash
+     venv\Scripts\activate
+     ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. Install backend dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+## Configuration
+
+1. Create a `.env.local` file in the project root with your API keys and configuration variables. For example:
+   ```env
+   OPENAI_API_KEY=your_openai_api_key_here
+   NEXT_PUBLIC_GROQ_API_KEY=your_groq_api_key_here
+   DEEPGRAM_API_KEY=your_deepgram_api_key_here
+   IMAGEIO_FFMPEG_EXE=/usr/local/bin/ffmpeg
+   ```
+
+2. Ensure that the following directories exist (this project uses them for storing generated images, audio, videos, and fonts):
+   ```bash
+   mkdir -p static/images static/audio static/videos static/fonts
+   ```
+
+3. Place your font file (e.g., `OpenSans-Bold.ttf`) in the `static/fonts` directory. This font is used for adding captions to videos.
+
+## Running the Application
+
+### 1. Start the Backend (FastAPI)
+
+Run the FastAPI API server (assuming your backend file is located in `Backend/ss.py`):
